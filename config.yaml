@@ -1,0 +1,15 @@
+# API Key for DarkSky: https://darksky.net/dev/
+api_key: <YOUR_API_KEY>
+
+# Your user name on geonames: http://www.geonames.org/
+# Make sure you've turned on "Enable web services" in your setting
+geonames_username: <YOUR_USERNAME>
+
+# Spacy pre-trained model to use
+spacy_model: en_core_web_md
+
+# Bot greeting name
+greeting_name: Edward
+
+# Input option: voice / text
+input_option: voice
