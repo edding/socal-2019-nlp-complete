@@ -1,9 +1,9 @@
 # API Key for Weather API : https://www.weatherapi.com/
-api_key: <YOUR_API_KEY>
+api_key: YOUR_API_KEY
 
 # Your user name on geonames: http://www.geonames.org/
 # Make sure you've turned on "Enable web services" in your setting
-geonames_username: <YOUR_USERNAME>
+geonames_username: YOUR_USERNAME
 
 # Spacy pre-trained model to use
 spacy_model: en_core_web_md
