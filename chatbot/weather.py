@@ -17,19 +17,19 @@ class GeoInfo:
 
 
 class Weather:
-    def __init__(self, geo_info: GeoInfo, temp: float, summary: str):
+    def __init__(self, geo_info: GeoInfo, temp: float, condition: str):
         self.geo_info = geo_info
         self.temp = temp
-        self.summary = summary
+        self.condition = condition
 
     def __str__(self) -> str:
-        return "geo_name: {}, temperature: {}, summary: {}".format(
-            self.geo_info.geo_name, self.temp, self.summary
+        return "geo_name: {}, temperature: {}, condition: {}".format(
+            self.geo_info.geo_name, self.temp, self.condition
         )
 
     def report(self) -> str:
-        return "The current temperature in {} is {} degrees fahrenheit. {}".format(
-            self.geo_info.geo_name, int(self.temp), self.summary
+        return "It's {} in {} at the moment. The current temperature is {} degrees fahrenheit.".format(
+            self.condition.lower(), self.geo_info.geo_name, int(self.temp)
         )
 
 
@@ -44,8 +44,8 @@ def geo_info_for_geo_name(
 
 
 def pull_weather_data(geo_info: GeoInfo, api_key: str = CONFIG["api_key"]) -> Weather:
-    """Pull weather data using Dark Sky api."""
-    url = "https://api.darksky.net/forecast/%s/%s,%s" % (
+    """Pull weather data using Weather api."""
+    url = "http://api.weatherapi.com/v1/current.json?key={}&q={},{}".format(
         api_key,
         geo_info.lat,
         geo_info.long,
@@ -56,6 +56,6 @@ def pull_weather_data(geo_info: GeoInfo, api_key: str = CONFIG["api_key"]) -> We
 
     return Weather(
         geo_info=geo_info,
-        temp=data["currently"]["temperature"],
-        summary=data["hourly"]["summary"],
+        temp=data["current"]["temp_f"],
+        condition=data["current"]["condition"]["text"],
     )

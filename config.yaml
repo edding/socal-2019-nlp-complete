@@ -1,4 +1,4 @@
-# API Key for DarkSky: https://darksky.net/dev/
+# API Key for Weather API : https://www.weatherapi.com/
 api_key: <YOUR_API_KEY>
 
 # Your user name on geonames: http://www.geonames.org/
