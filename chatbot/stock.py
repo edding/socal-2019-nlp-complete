@@ -1,7 +1,7 @@
 import json
 from typing import Dict
 
-from fuzzywuzzy import process
+from rapidfuzz import process
 from yahoo_fin.stock_info import get_live_price
 
 from chatbot.util import output
