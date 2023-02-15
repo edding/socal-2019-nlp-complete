@@ -68,6 +68,6 @@ urllib3==1.26.5
 w3lib==1.21.0
 wasabi==0.2.2
 websockets==9.1
-Werkzeug==0.15.6
+Werkzeug==2.2.3
 wrapt==1.11.2
 yahoo-fin==0.8.2
